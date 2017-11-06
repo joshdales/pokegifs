@@ -10,7 +10,7 @@ class PokemonController < ApplicationController
 
     res = HTTParty.get("https://api.giphy.com/v1/gifs/search?api_key=#{ENV["GIPHY_API"]}&q=pikachu&rating=g")
     body = JSON.parse(res.body)
-
+    
     render json: { "id": id, "name": name, "types": types}
   end
 
